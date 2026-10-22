@@ -8,3 +8,5 @@ jobs:
         run: echo "starting the workflow"
       - name: Last Step
         run: echo "Ending the workflow"
+      - name: Test Step
+        run: echo "Testing the new workflow"
