@@ -1,5 +1,5 @@
 name: First workflow
-on: workflow_dispatch
+on: push
 jobs:
   first_job:
     runs-on: ubuntu-latest
@@ -10,3 +10,13 @@ jobs:
         run: echo "Ending the workflow"
       - name: Test Step
         run: echo "Testing the new workflow"
+  second_job:
+    needs: first_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step
+        run: echo "starting the workflow"
+      - name: Last Step
+        run: echo "Ending the workflow"
+      - name: Test Step
+        run: echo "Testing the new workflow"    
